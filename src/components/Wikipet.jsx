@@ -34,14 +34,14 @@ const Wikipet = () => {
         <ul>
           {perritos.map((item) => (
             <div className="row">
-              <div className="align-self-center p-2 bd-highlight col-12 col-sm-8 col-md-6 col-xl-4">
+              <div className="align-self-center p-2 bd-highlight col-11 col-sm-8 col-md-6 col-xl-4">
                 <img
                   className="mx-auto d-block rounded-circle"
                   src={item.img}
                   alt="Perrito"
                 />
               </div>
-              <div className="col-12 col-sm-8 col-md-6 col-xl-4 m-4">
+              <div className="col-11 col-sm-8 col-md-6 col-xl-4 mt-4 mb-4">
                 <li className="list-group-item" key={item.id}>
                   <p>
                     <strong>Raza:</strong> {item.raza}

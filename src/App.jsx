@@ -10,7 +10,8 @@ import Wikipet from "./components/Wikipet";
 import Fundaciones from "./components/Fundaciones";
 import Veterinarias from "./components/Veterinarias";
 import Adopcion from "./components/Adopcion";
-//import Navbar2 from "./components/Navbar2";
+import Navbar2 from "./components/Navbar2";
+import Navbar3 from "./components/Navbar3";
 
 function App() {
   /* 
@@ -32,7 +33,9 @@ function App() {
   return firebaseUser !== false ? (
     <Router>
       <div>
-        <Navbar firebaseUser={firebaseUser} />
+        {/*<Navbar firebaseUser={firebaseUser} />*/}
+        <Navbar3 firebaseUser={firebaseUser} />
+        {/*  <Navbar2 firebaseUser={firebaseUser} /> */}
         {/* Componentes dinamicos : Rutas*/}
         <Switch>
           <Route path="/login">

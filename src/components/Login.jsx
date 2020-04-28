@@ -102,7 +102,7 @@ const Login = (props) => {
 
   // ---------------------------------------- Contenido ----------------------------------------
   return (
-    <div className="mt-5">
+    <div className="container mt-5">
       <h3 className="text-center">
         {esRegistro ? "Registro de Usuario" : "Login de Acceso"}
       </h3>

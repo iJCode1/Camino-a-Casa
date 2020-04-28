@@ -17,20 +17,20 @@ const Navbar = (props) => {
       </Link>
       <div>
         <div className="d-flex">
-          <NavLink className="btn btn-dark mr-2" to="/fundaciones">
+          <NavLink className="btn btn-dark mr-3" to="/fundaciones">
             Fundaciones
           </NavLink>
 
-          <NavLink className="btn btn-dark mr-2" to="/veterinarias">
+          <NavLink className="btn btn-dark mr-3" to="/veterinarias">
             Veterinarias
           </NavLink>
 
-          <NavLink className="btn btn-dark mr-2" to="/wikipet">
+          <NavLink className="btn btn-dark mr-3" to="/wikipet">
             WikiPet
           </NavLink>
 
           {props.firebaseUser !== null ? (
-            <NavLink className="btn btn-dark mr-2" to="/adopcion">
+            <NavLink className="btn btn-dark mr-3" to="/adopcion">
               Adopción
             </NavLink>
           ) : null}
@@ -43,7 +43,7 @@ const Navbar = (props) => {
               Cerrar Sesión
             </button>
           ) : (
-            <NavLink className="btn bg-primary text-white" to="/login">
+            <NavLink className="btn bg-primary text-white mr-3" to="/login">
               Login
             </NavLink>
           )}

@@ -11,6 +11,7 @@ const Adopcion = (props) => {
       setUser(auth.currentUser);
     } else {
       console.log("No existe el usuario");
+
       props.history.push("/login");
     }
   }, [props.history]);

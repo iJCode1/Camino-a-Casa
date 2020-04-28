@@ -10,6 +10,7 @@ import Wikipet from "./components/Wikipet";
 import Fundaciones from "./components/Fundaciones";
 import Veterinarias from "./components/Veterinarias";
 import Adopcion from "./components/Adopcion";
+//import Navbar2 from "./components/Navbar2";
 
 function App() {
   /* 

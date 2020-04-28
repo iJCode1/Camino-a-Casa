@@ -43,16 +43,30 @@ const Wikipet = () => {
               </div>
               <div className="col-12 col-sm-8 col-md-6 col-xl-4 m-4">
                 <li className="list-group-item" key={item.id}>
-                  <p>Raza: {item.raza}</p>
-                  <p>Origen: {item.origen}</p>
+                  <p>
+                    <strong>Raza:</strong> {item.raza}
+                  </p>
+                  <p>
+                    <strong>Origen:</strong> {item.origen}
+                  </p>
                   {item.temperamento ? (
-                    <p>Temperamento : {item.temperamento}</p>
+                    <p>
+                      <strong>Temperamento:</strong> {item.temperamento}
+                    </p>
                   ) : null}
-                  <p>Altura: {item.altura}</p>
-                  <p>Peso: {item.peso}</p>
-                  <p>Color: {item.color}</p>
+                  <p>
+                    <strong>Altura:</strong> {item.altura}
+                  </p>
+                  <p>
+                    <strong>Peso:</strong> {item.peso}
+                  </p>
+                  <p>
+                    <strong>Color:</strong> {item.color}
+                  </p>
                   {item.esperanzaV ? (
-                    <p>Esperanza Vida: {item.esperanzaV}</p>
+                    <p>
+                      <strong>Esperanza Vida:</strong> {item.esperanzaV}
+                    </p>
                   ) : null}
                   {item.fut ? <p>fut si</p> : null}
                 </li>

@@ -1,7 +1,7 @@
 import React from "react";
 import { db } from "../firebase"; // Importamos el db:  database
 
-const Wikipet = () => {
+const Wikipet2 = () => {
   // Estado: Datos del Perrito
   const [perritos, setPerritos] = React.useState([]);
   // Uso UseEffect para que se ejecute cuando se pinta el componente!
@@ -106,4 +106,4 @@ const Wikipet = () => {
   );
 };
 
-export default Wikipet;
+export default Wikipet2;

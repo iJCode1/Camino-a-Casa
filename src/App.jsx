@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 
 import { auth } from "./firebase"; // importacion de Firebase
@@ -10,8 +9,8 @@ import Wikipet from "./components/Wikipet";
 import Fundaciones from "./components/Fundaciones";
 import Veterinarias from "./components/Veterinarias";
 import Adopcion from "./components/Adopcion";
-import Navbar2 from "./components/Navbar2";
-import Navbar3 from "./components/Navbar3";
+import Navbar from "./components/Navbar";
+import Wikipet2 from "./components/Wikipet2";
 
 function App() {
   /* 
@@ -34,7 +33,7 @@ function App() {
     <Router>
       <div>
         {/*<Navbar firebaseUser={firebaseUser} />*/}
-        <Navbar3 firebaseUser={firebaseUser} />
+        <Navbar firebaseUser={firebaseUser} />
         {/*  <Navbar2 firebaseUser={firebaseUser} /> */}
         {/* Componentes dinamicos : Rutas*/}
         <Switch>
@@ -45,7 +44,8 @@ function App() {
             <Adopcion />
           </Route>
           <Route path="/wikipet">
-            <Wikipet />
+            {/*<Wikipet />*/}
+            <Wikipet2 />
           </Route>
           <Route path="/fundaciones">
             <Fundaciones />

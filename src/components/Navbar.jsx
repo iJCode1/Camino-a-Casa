@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { auth } from "../firebase";
 import { withRouter } from "react-router-dom";
+import { auth } from "../firebase";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
   const cerrarSesion = () => {
@@ -9,46 +9,82 @@ const Navbar = (props) => {
       props.history.push("/login");
     });
   };
-
   return (
-    <div className="sticky-top container-fluid navbar navbar-dark bg-warning">
-      <Link className="navbar-brand text-dark" to="/">
-        Camino a Casa
-      </Link>
-      <div>
-        <div className="d-flex">
-          <NavLink className="btn btn-dark mr-3" to="/fundaciones">
-            Fundaciones
-          </NavLink>
+    <div className="sticky-top ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-warning ">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <Link className="navbar-brand text-dark " to="/">
+          Camino a Casa
+        </Link>
 
-          <NavLink className="btn btn-dark mr-3" to="/veterinarias">
-            Veterinarias
-          </NavLink>
+        <div className="collapse navbar-collapse " id="navbarTogglerDemo03">
+          <ul className=" navbar-nav ml-auto mt-2 mt-lg-0 ">
+            <li className="nav-item active ">
+              <NavLink
+                className="btn btn-dark mr-1 mt-1 d-block p-2"
+                to="/fundaciones"
+              >
+                Fundaciones
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="btn btn-dark mr-1 mt-1 d-block p-2"
+                to="/veterinarias"
+              >
+                Veterinarias
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="btn btn-dark mr-1 mt-1 d-block p-2"
+                to="/wikipet"
+              >
+                WikiPet
+              </NavLink>
+            </li>
 
-          <NavLink className="btn btn-dark mr-3" to="/wikipet">
-            WikiPet
-          </NavLink>
+            <li className="nav-item">
+              {props.firebaseUser !== null ? (
+                <NavLink
+                  className="btn btn-dark mr-1 mt-1 d-block p-2"
+                  to="/adopcion"
+                >
+                  Adopción
+                </NavLink>
+              ) : null}
+            </li>
 
-          {props.firebaseUser !== null ? (
-            <NavLink className="btn btn-dark mr-3" to="/adopcion">
-              Adopción
-            </NavLink>
-          ) : null}
-
-          {props.firebaseUser !== null ? (
-            <button
-              className="btn bg-primary text-white"
-              onClick={() => cerrarSesion()}
-            >
-              Cerrar Sesión
-            </button>
-          ) : (
-            <NavLink className="btn bg-primary text-white mr-3" to="/login">
-              Login
-            </NavLink>
-          )}
+            <li className="nav-item">
+              {props.firebaseUser !== null ? (
+                <button
+                  className="ml-auto btn bg-primary text-white mr-1 mt-1 d-block p-2"
+                  onClick={() => cerrarSesion()}
+                >
+                  Cerrar Sesión
+                </button>
+              ) : (
+                <NavLink
+                  className="btn bg-primary text-white mr-1 mt-1 d-block p-2"
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              )}
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

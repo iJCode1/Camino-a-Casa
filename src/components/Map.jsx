@@ -12,8 +12,7 @@ const Map = (props) => {
               src={props.map}
               width="100%"
               height="200"
-              frameborder="0"
-              allowfullscreen
+              className="map"
               title={props.titulo}
             ></iframe>
           </div>

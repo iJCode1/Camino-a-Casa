@@ -20,7 +20,7 @@ const Veterinarias = () => {
           id: item.id,
           ...item.data(),
         }));
-        console.log(arrayVeterinaria);
+        //console.log(arrayVeterinaria);
         setVeterinaria(arrayVeterinaria);
       } catch (error) {
         console.log(error); // Muestra si hay error
@@ -39,7 +39,7 @@ const Veterinarias = () => {
         </div>
         <ul>
           {veterinaria.map((item) => (
-            <div className="row">
+            <div className="row" key={item.id}>
               <div className="align-self-center p-2 bd-highlight col-11 col-sm-8 col-md-6 col-xl-4">
                 <img
                   className="rounded mx-auto d-block "
@@ -48,7 +48,7 @@ const Veterinarias = () => {
                 />
               </div>
               <div className="col-11 col-sm-8 col-md-6 col-xl-4 mt-4 mb-4">
-                <li className="list-group-item" key={item.id}>
+                <li className="list-group-item">
                   <h3 className="text-center mb-4">
                     <span className="text-success">{item.veterinaria}</span>
                   </h3>

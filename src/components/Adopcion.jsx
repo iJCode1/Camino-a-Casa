@@ -7,14 +7,13 @@ const Adopcion = (props) => {
 
   React.useEffect(() => {
     if (auth.currentUser) {
-      console.log("Hay usuario");
       setUser(auth.currentUser);
     } else {
       console.log("No existe el usuario");
 
       props.history.push("/login");
     }
-  }, [props.history]);
+  }, [props.history, user]);
 
   return (
     <div className="text-center mt-2 text-info">

@@ -1,6 +1,7 @@
 import React from "react";
 import { db } from "../firebase"; // Importamos el db:  database
-import "./estilos.css";
+
+import "../estilos/fundaciones.css";
 
 const Fundaciones = () => {
   // Estado: Datos del Perrito
@@ -20,7 +21,7 @@ const Fundaciones = () => {
           id: item.id,
           ...item.data(),
         }));
-        console.log(arrayPerritos);
+
         setPerritos(arrayPerritos);
       } catch (error) {
         console.log(error); // Muestra si hay error

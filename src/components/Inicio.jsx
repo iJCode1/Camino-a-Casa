@@ -33,7 +33,7 @@ const Inicio = () => {
           <br />
           Estamos conformados por
           <div className="text-center mx-auto">
-            <ul className="list-group-flush ">
+            <ul className="list-group-flush mr-4">
               <li className="list-group-item"></li>
               <li className="list-group-item">Dominguez Merino Joel</li>
               <li className="list-group-item">Gil Alcantara Enrique</li>

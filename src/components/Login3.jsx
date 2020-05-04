@@ -1,5 +1,4 @@
-import React from "react";
-import "../estilos/style.css";
+import React from "react"; // Importamos React
 import { auth, db } from "../firebase"; // Importamos el auth: autenticación
 import { withRouter } from "react-router-dom"; // Importamos el withRouter para usar el history.props
 
@@ -103,57 +102,29 @@ const Login = (props) => {
 
   // ---------------------------------------- Contenido ----------------------------------------
   return (
-    <div className="container">
-      <img
-        className="wave"
-        src="https://firebasestorage.googleapis.com/v0/b/camino-a-casa-c2275.appspot.com/o/login%2Fwave.png?alt=media&token=3f50bf8c-2061-4eb1-8220-13455d81a8a2"
-        alt="wave"
-      />
-      <div className="containerL">
-        <div className="imgL">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/camino-a-casa-c2275.appspot.com/o/login%2Fbg.svg?alt=media&token=13a203c9-d90e-4134-b85b-5cb78471db80"
-            alt="bg"
-          />
-        </div>
-        <div className="login-content mx-auto mt-3">
+    <div className="container mt-5">
+      <h3 className="text-center">
+        {esRegistro ? "Registro de Usuario" : "Login de Acceso"}
+      </h3>
+      <hr />
+      <div className="row justify-content-center">
+        <div className="col-12 col-sm-8 col-md-6 col-xl-4">
           <form onSubmit={Validar}>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/camino-a-casa-c2275.appspot.com/o/login%2Favatar.svg?alt=media&token=2b7c1c4f-05b3-4908-b3ce-b1e6f2df9b66"
-              alt="avatar"
-            />
-            <h2 className="title mt-2 mb-1">
-              {esRegistro ? "Registrarse" : "Iniciar Sesión"}
-            </h2>
             {error ? <div className="alert alert-danger">{error}</div> : null}
-            <div className="input-div one">
-              <div className="i">
-                <i className="fa fa-user"></i>
-              </div>
-              <div className="div">
-                <input
-                  type="email"
-                  className="input"
-                  placeholder="Ingrese Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                />
-              </div>
-            </div>
-            <div className="input-div pass">
-              <div className="i">
-                <i className="fa fa-lock"></i>
-              </div>
-              <div className="div">
-                <input
-                  type="password"
-                  className="input"
-                  placeholder="Ingrese Contraseña"
-                  onChange={(e) => setContra(e.target.value)}
-                  value={contra}
-                />
-              </div>
-            </div>
+            <input
+              type="email"
+              className="form-control mb-2"
+              placeholder="Ingrese Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+            <input
+              type="password"
+              className="form-control mb-2"
+              placeholder="Ingrese Contraseña"
+              onChange={(e) => setContra(e.target.value)}
+              value={contra}
+            />
             <button className="btn btn-lg btn-dark btn-block" type="submit">
               {esRegistro ? "Registrarse" : "Acceder"}
             </button>
@@ -171,4 +142,4 @@ const Login = (props) => {
   );
 };
 
-export default withRouter(Login);
+export default withRouter(Login); // Exportamos con withRoter

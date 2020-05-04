@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./components/Login";
 
 import { auth } from "./firebase"; // importacion de Firebase
 import Footer from "./components/Footer";
 import Inicio from "./components/Inicio";
-import Wikipet from "./components/Wikipet";
 import Fundaciones from "./components/Fundaciones";
 import Veterinarias from "./components/Veterinarias";
 import Adopcion from "./components/Adopcion";
 import Navbar from "./components/Navbar";
-import Wikipet2 from "./components/Wikipet2";
+import Wikipet from "./components/Wikipet";
+import Login from "./components/Login";
 
 function App() {
   /* 
@@ -45,7 +44,7 @@ function App() {
           </Route>
           <Route path="/wikipet">
             {/*<Wikipet />*/}
-            <Wikipet2 />
+            <Wikipet />
           </Route>
           <Route path="/fundaciones">
             <Fundaciones />

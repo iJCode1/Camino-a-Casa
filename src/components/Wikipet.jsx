@@ -6,7 +6,7 @@ const Wikipet = () => {
   const [perritos, setPerritos] = React.useState([]);
   // Estado ultimo documento
   const [ultimo, setUltimo] = React.useState(null);
-  // Estado para descativar
+  // Estado para desactivar
   const [desactivar, setDesactivar] = React.useState(false);
   // Uso UseEffect para que se ejecute cuando se pinta el componente!
   React.useEffect(() => {
@@ -82,6 +82,7 @@ const Wikipet = () => {
       console.log(error);
     }
   };
+
   //-------------------------------------- Elementos -----------------------------------------
   return (
     <div>
@@ -91,6 +92,7 @@ const Wikipet = () => {
             <mark className="d-block p-2">Wikipet</mark>
           </h1>
         </div>
+
         <ul>
           {perritos.map((item) => (
             <div className="row" key={item.id}>

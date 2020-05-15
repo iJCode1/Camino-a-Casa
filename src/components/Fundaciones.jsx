@@ -4,7 +4,7 @@ import { db } from "../firebase"; // Importamos el db:  database
 import "../estilos/fundaciones.css";
 
 const Fundaciones = () => {
-  // Estado: Datos del Perrito
+  // Estado: Datos del Perrito de Adopcion
   const [perritos, setPerritos] = React.useState([]);
   // Uso UseEffect para que se ejecute cuando se pinta el componente!
   React.useEffect(() => {
@@ -12,8 +12,8 @@ const Fundaciones = () => {
     const obtenerDatos = async () => {
       try {
         const data = await db
-          .collection("perritos")
-          .orderBy("raza", "asc")
+          .collection("amigos_peludos_toluca")
+          .orderBy("nombre", "asc")
           .get(); // Se obtiene datos de la collecion perritos (tabla)
 
         // Se recorre para obtener todos los datos!
@@ -32,6 +32,11 @@ const Fundaciones = () => {
   //-------------------------------------- Elementos -----------------------------------------
   return (
     <div className="container">
+      <div className="text-center ">
+        <h1 className="mt-4 mb-4 ">
+          <mark className="d-block p-2">Perritos Para Adoptar</mark>
+        </h1>
+      </div>
       <div className="row">
         {perritos.map((item) => (
           <div
@@ -42,56 +47,74 @@ const Fundaciones = () => {
               <div className="card-body">
                 <div className="align-self-center p-4 bd-highlight col-12 col-sm-8 col-md-6 col-xl-4">
                   <img
-                    className="mx-auto d-block rounded-circle"
+                    className="mx-auto d-block rounded"
                     src={item.img}
                     alt="Perrito"
                   />
                 </div>
                 <div className="text-center">
+                  {item.nombre ? (
+                    <p>
+                      <strong>Nombre:</strong> {item.nombre}
+                    </p>
+                  ) : null}
                   {item.raza ? (
                     <p>
                       <strong>Raza:</strong> {item.raza}
                     </p>
                   ) : null}
-
-                  {item.origen ? (
+                  {item.sexo ? (
                     <p>
                       <strong>
-                        <span>Origen:</span>
+                        <span>Sexo del Perrit@: </span>
                       </strong>
-                      {item.origen}
+                      {item.sexo}
+                    </p>
+                  ) : null}
+                  {item.edad ? (
+                    <p>
+                      <strong>Edad:</strong> {item.edad}
+                    </p>
+                  ) : null}
+                  {item.talla ? (
+                    <p>
+                      <strong>Talla:</strong> {item.talla}
+                    </p>
+                  ) : null}
+                  {item.descripcion ? (
+                    <p>
+                      <strong>Descripción:</strong> {item.descripcion}
+                    </p>
+                  ) : null}
+                  {item.estadoA ? (
+                    <p>
+                      <strong>Estado Actual:</strong> {item.estadoA}
+                    </p>
+                  ) : null}
+                  {item.necesidad ? (
+                    <p>
+                      <strong>Necesidad:</strong> {item.necesidad}
                     </p>
                   ) : null}
 
-                  {item.temperamento ? (
-                    <p>
-                      <strong>Caracteristicas:</strong> {item.temperamento}
-                    </p>
-                  ) : null}
+                  <a
+                    className="fa fa-facebook-official"
+                    href="https://www.facebook.com/amigospeludosdetolucaAC/"
+                    target="__blank"
+                  >
+                    <strong> Amigos Peludos Toluca, A.C.</strong>
+                  </a>
 
-                  {item.altura ? (
-                    <p>
-                      <strong>Altura:</strong> {item.altura}
-                    </p>
-                  ) : null}
-
-                  {item.peso ? (
-                    <p>
-                      <strong>Peso:</strong> {item.peso}
-                    </p>
-                  ) : null}
-
-                  {item.color ? (
-                    <p>
-                      <strong>Color:</strong> {item.color}
-                    </p>
-                  ) : null}
-
-                  {item.esperanzaV ? (
-                    <p>
-                      <strong>Esperanza Vida:</strong> {item.esperanzaV}
-                    </p>
-                  ) : null}
+                  <a
+                    className="fa fa-whatsapp text-success mb-2"
+                    href={
+                      "https://wa.me/527223812630?text=Me%20gustaria%20mas%20información%20de%20" +
+                      item.nombre
+                    }
+                    target="__blank"
+                  >
+                    <strong> Quiero adoptar a {item.nombre}</strong>
+                  </a>
                 </div>
               </div>
             </div>

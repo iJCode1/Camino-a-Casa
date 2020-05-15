@@ -23,18 +23,16 @@ const Navbar = (props) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <Link className="navbar-brand text-dark " to="/">
-          Camino a Casa
-        </Link>
+        <Link className="navbar-brand text-dark ">Camino a Casa</Link>
 
         <div className="collapse navbar-collapse " id="navbarTogglerDemo03">
           <ul className=" navbar-nav ml-auto mt-2 mt-lg-0 ">
             <li className="nav-item active ">
               <NavLink
                 className="btn btn-dark mr-1 mt-1 d-block p-2"
-                to="/fundaciones"
+                to="/adoptar"
               >
-                Fundaciones
+                Perritos en Adopción
               </NavLink>
             </li>
             <li className="nav-item">

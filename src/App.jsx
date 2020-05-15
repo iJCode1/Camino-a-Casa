@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { auth } from "./firebase"; // importacion de Firebase
 import Footer from "./components/Footer";
-import Inicio from "./components/Inicio";
 import Fundaciones from "./components/Fundaciones";
 import Veterinarias from "./components/Veterinarias";
 import Adopcion from "./components/Adopcion";
@@ -46,14 +45,14 @@ function App() {
             {/*<Wikipet />*/}
             <Wikipet />
           </Route>
-          <Route path="/fundaciones">
+          <Route path="/adoptar">
             <Fundaciones />
           </Route>
           <Route path="/veterinarias">
             <Veterinarias />
           </Route>
           <Route path="/">
-            <Inicio />
+            <Fundaciones />
           </Route>
         </Switch>
       </div>
